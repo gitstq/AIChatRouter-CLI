@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "aichatrouter-cli"
+version = "1.0.0"
+description = "Intelligent AI Chat Router CLI - Route queries to the best AI model automatically"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "AIChatRouter Team", email = "team@aichatrouter.dev"},
+]
+keywords = ["ai", "chat", "router", "cli", "openai", "anthropic", "llm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "pyyaml>=5.4",
+    "requests>=2.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=3.0",
+]
+
+[project.scripts]
+aichatrouter = "main:main"
+
+[project.urls]
+Homepage = "https://github.com/aichatrouter/aichatrouter-cli"
+Repository = "https://github.com/aichatrouter/aichatrouter-cli"
+Issues = "https://github.com/aichatrouter/aichatrouter-cli/issues"
+
+[tool.setuptools]
+packages = ["aichatrouter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
